@@ -25,6 +25,8 @@ const userSchema = mongoose.Schema({
     type: Date,
     default: Date.now()
   },//更新时间
+  "account": String,
+  "password": String,
   remark: String
 })
 

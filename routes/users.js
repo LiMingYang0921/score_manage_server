@@ -21,9 +21,7 @@ router.post('/login', async (ctx) => {
      * 第三种
      * const res = await User.findOne({ account, password }).select('userId')
      */
-    console.log({ account, password });
-    const res = await User.findOne({ account: 132, password: 123 }, 'userId userName userEmail state role deptId roleList')
-    console.log('res=> ', res);
+    const res = await User.findOne({ account, password }, 'userId userName userEmail state role deptId roleList')
     const data = res._doc
     const token = jwt.sign({
       data
